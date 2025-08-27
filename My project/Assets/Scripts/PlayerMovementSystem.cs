@@ -32,22 +32,22 @@ public class PlayerMovement : MonoBehaviour
             _playerAnimator.CrossFade("PlayerShakeIdle", 0, 0);
         }
 
-        RotatePlayerSprite(moveX, moveY);
+        //RotatePlayerSprite(moveX, moveY);
     }
 
     private void FixedUpdate()
     {
         _rigidbody.linearVelocity = _movementVector * _moveSpeed;
     }
-    public void RotatePlayerSprite(float vectorX, float vectorY)
-    {
-        if(vectorX < 0 || vectorY < 0)
-        {
-            gameObject.transform.localScale = new Vector2(-1, 1);
-        }
-        else
-        {
-            gameObject.transform.localScale = new Vector2(1, 1);
-        }
-    }
+    //public void RotatePlayerSprite(float vectorX, float vectorY)
+    //{
+    //    if(vectorX < 0 || vectorY < 0)
+    //    {
+    //        gameObject.transform.localScale = new Vector2(-1, 1);
+    //    }
+    //    else
+    //    {
+    //        gameObject.transform.localScale = new Vector2(1, 1);
+    //    }
+    //}
 }
