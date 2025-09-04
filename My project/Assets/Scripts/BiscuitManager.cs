@@ -46,7 +46,7 @@ public class BiscuitManager : MonoBehaviour
     }
     private void DisplayUpdatedBiscuits()
     {
-        _biscuitsCounter.text = _biscuitsAmount.ToString();
+        _biscuitsCounter.text = "Biscuits: " + _biscuitsAmount.ToString();
         _notificationText.gameObject.SetActive(true);
     }
 
