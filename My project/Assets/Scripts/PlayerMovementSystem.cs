@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 5f;
 
-    private Animator _playerAnimator;
+    [SerializeField] private Animator _playerBodyAnimator;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _movementVector;
@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -24,12 +23,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveX != 0 || moveY != 0)
         {
-            _playerAnimator.CrossFade("PlayerShakeMovement", 0, 0);
+            _playerBodyAnimator.CrossFade("PlayerShakeMovement", 0, 0);
         }
         else
         {
             _movementVector = Vector2.zero;
-            _playerAnimator.CrossFade("PlayerShakeIdle", 0, 0);
+            _playerBodyAnimator.CrossFade("PlayerShakeIdle", 0, 0);
         }
 
         //RotatePlayerSprite(moveX, moveY);
